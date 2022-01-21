@@ -1,33 +1,41 @@
 {
   "polyfillFiles": [
-    "static/chunks/polyfills.js"
+    "static/chunks/polyfills-a40ef1678bae11e696dba45124eadd70.js"
   ],
-  "devFiles": [
-    "static/chunks/react-refresh.js"
-  ],
-  "ampDevFiles": [
-    "static/chunks/webpack.js",
-    "static/chunks/amp.js"
-  ],
+  "devFiles": [],
+  "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/development/_buildManifest.js",
-    "static/development/_ssgManifest.js"
+    "static/pFpd9_RJvc6utpfAhZC-l/_buildManifest.js",
+    "static/pFpd9_RJvc6utpfAhZC-l/_ssgManifest.js"
   ],
   "pages": {
+    "/": [
+      "static/chunks/webpack-483a2d4fb3ade84a5d64.js",
+      "static/chunks/framework-925f8b290ee4a52af3fc.js",
+      "static/chunks/main-6d848910cff452bf7614.js",
+      "static/chunks/pages/index-dc07560910285ccd569f.js"
+    ],
     "/[id]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/[id].js"
+      "static/chunks/webpack-483a2d4fb3ade84a5d64.js",
+      "static/chunks/framework-925f8b290ee4a52af3fc.js",
+      "static/chunks/main-6d848910cff452bf7614.js",
+      "static/chunks/061e6b60-9bbabe7a318d48b784f4.js",
+      "static/chunks/fb7d5399-039bee2e59f907b029e2.js",
+      "static/chunks/14-ca38a6b0ad0ac05bf9c8.js",
+      "static/chunks/pages/[id]-e3ea3999fb1046fccb7a.js"
     ],
     "/_app": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/_app.js"
+      "static/chunks/webpack-483a2d4fb3ade84a5d64.js",
+      "static/chunks/framework-925f8b290ee4a52af3fc.js",
+      "static/chunks/main-6d848910cff452bf7614.js",
+      "static/css/959ff6326b96b5d5cd7e.css",
+      "static/chunks/pages/_app-cc9c0898aa28e6611824.js"
     ],
     "/_error": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/_error.js"
+      "static/chunks/webpack-483a2d4fb3ade84a5d64.js",
+      "static/chunks/framework-925f8b290ee4a52af3fc.js",
+      "static/chunks/main-6d848910cff452bf7614.js",
+      "static/chunks/pages/_error-ea939aab753d9e9db3bd.js"
     ]
   },
   "ampFirstPages": []

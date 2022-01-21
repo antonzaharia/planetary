@@ -21,7 +21,7 @@ function Planet({ metadata, openSea }) {
     <p>Not for sale</p>
   )
   
-  if (openSea.orders.length > 0) {
+  if (openSea?.orders?.length > 0) {
     const price = web3.utils.fromWei(openSea.orders[0].base_price, 'ether')
     const address = openSea.orders[0].maker.address
     forSaleNotice = (
@@ -42,6 +42,8 @@ function Planet({ metadata, openSea }) {
 
         {forSaleNotice}
 
+        {console.log(openSea)}
+
         <a href={openSeaLink} target="_blank" className="button"> 
           View on OpenSea
         </a>
@@ -61,7 +63,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths,
-    fallback: true
+    fallback: false
   }
 }
 
