@@ -7,9 +7,7 @@ import Navigation from '../components/Navigation'
 import Universe from '../components/Universe'
 import EthName from '../components/EthName'
 
-import metadata from '../planetary-data/metadata-1.json'
-
-function Planet({ metadata }) {
+function Planet({ metadata, openSea }) {
   const router = useRouter()
   let { id } = router.query
   id = parseInt(id)
@@ -19,13 +17,20 @@ function Planet({ metadata }) {
     document.documentElement.style.setProperty("--secondary-color", metadata.properties.secondaryColor)
   }
 
-  // TODO
   let forSaleNotice = (
     <p>Not for sale</p>
   )
+  
+  if (openSea.orders.length > 0) {
+    const price = web3.utils.fromWei(openSea.orders[0].base_price, 'ether')
+    const address = openSea.orders[0].maker.address
+    forSaleNotice = (
+        <p>Currently on sale on Opensea for {price} ETH by <EthName address={address} />.</p>
 
-  // TODO
-  let openSeaLink = "#"
+    )
+  }
+
+  let openSeaLink = `https://testnets.opensea.io/assets/${contractAddress}/${id}`
 
   return (
     <>
@@ -57,16 +62,26 @@ export async function getStaticPaths() {
   return {
     paths: paths,
     fallback: true
-  } 
+  }
 }
 
 export async function getStaticProps({ params }) {
 
   // params.id is available
 
+  let token = await contract.methods.tokenURI(params.id).call()
+
+  let metadataResponse = await fetch(token)
+  let metadata = await metadataResponse.json()
+
+  let openSeaResponse = await fetch(`https://rinkeby-api.opensea.io/api/v1/asset/${contractAddress}/${params.id}`)
+  let openSea = await openSeaResponse.json()
+  console.log(openSea)
+
   return {
     props: {
-      metadata: metadata
+      metadata: metadata,
+      openSea: openSea
     }
   }
 }

@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
 contract Planetary is ERC721, ERC721URIStorage {
-  constructor() ERC721("Planetary", "PLNT") {
+  constructor() ERC721("Planetary", "PLT") {
     _createPlanet(msg.sender, 1, 'QmP7HXPekgWTAa3vss8NPGuqimC8oooh6rfHBxRydLuH6Z');
     _createPlanet(msg.sender, 2, 'QmcaB78qNBwu8BjLJ8css95j1r3GQvfGmV5dh4n3kBstVz');
     _createPlanet(msg.sender, 3, 'QmRVoeVyy7qdxxvrgJXeC4omJBwF49hNEhQmda4bEzL87Q');
@@ -20,7 +20,7 @@ contract Planetary is ERC721, ERC721URIStorage {
   }
 
   function _baseURI() internal pure override returns (string memory) {
-    return "https://ipsf.io/ipsf/";
+    return "https://ipfs.io/ipfs/";
   }
 
   // The following functions are overrides required by Solidity.
